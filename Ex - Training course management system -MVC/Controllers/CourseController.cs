@@ -52,7 +52,6 @@ namespace Ex___Training_course_management_system__MVC.Controllers
 
         }
 
-        [Route("Edit/{id:guid}")]
         public IActionResult Edit(Guid id)
         {
             var course = CourseRepo.GetCourse(id);

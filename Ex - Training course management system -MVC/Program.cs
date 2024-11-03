@@ -4,7 +4,6 @@ using Ex___Training_course_management_system__MVC.Repository.InstructorRepo;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<DataBaseContext>();

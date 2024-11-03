@@ -1,0 +1,46 @@
+﻿@using Ex___Training_course_management_system__MVC.Models
+@model Course
+
+<link rel="stylesheet" href="~/css/Course-Create.css">
+
+@{
+    ViewData["Title"] = "Create Course";
+}
+
+
+
+<div class="container">
+    <h1>Create Course</h1>
+
+    <form asp-action="Create">
+        <div>
+            <label asp-for="Name"></label>
+            <input asp-for="Name" required />
+        </div>
+        <div>
+            <label asp-for="Description"></label>
+            <input asp-for="Description" required />
+        </div>
+        <div>
+            <label asp-for="StartDate"></label>
+            <input asp-for="StartDate" type="date" required />
+        </div>
+        <div>
+            <label asp-for="EndDate"></label>
+            <input asp-for="EndDate" type="date" required />
+        </div>
+        <div>
+            <label asp-for="DurationHours"></label>
+            <input asp-for="DurationHours" type="number" required />
+        </div>
+        <div>
+            <label asp-for="InstructorId"></label>
+            <select asp-for="InstructorId" asp-items="ViewBag.Instructors" required>
+                <option value="">Select an Instructor</option>
+            </select>
+        </div>
+        <button type="submit">Create</button>
+    </form>
+
+</div>
+

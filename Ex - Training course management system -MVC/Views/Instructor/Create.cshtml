@@ -1,0 +1,19 @@
+﻿@using Ex___Training_course_management_system__MVC.Models
+@model Instructor
+<link rel="stylesheet" href="~/css/Instructor-create.css">
+
+<div class="container">
+    <h1>Create Instructor</h1>
+
+    <form asp-action="Create">
+        <div>
+            <label asp-for="Name"></label>
+            <input asp-for="Name" required />
+        </div>
+        <div>
+            <label asp-for="Email"></label>
+            <input asp-for="Email" type="email" required />
+        </div>
+        <button type="submit">Create</button>
+    </form>
+</div>

@@ -1,0 +1,55 @@
+﻿@using Ex___Training_course_management_system__MVC.Models
+@model IEnumerable<Course>
+
+
+<body>
+    <link rel="stylesheet" href="~/css/Course-Index.css">
+
+    <h1>Courses</h1>
+   
+    <div class="table-container">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Hours</th>
+                            <th>Instructor</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var course in Model)
+                        {
+                            <tr>
+                                <td>@course.Name</td>
+                                <td>@course.Description</td>
+                                <td>@course.StartDate.ToShortDateString()</td>
+                                <td>@course.EndDate.ToShortDateString()</td>
+                                <td>@course.DurationHours</td>
+                                <td>@course.Instructor?.Name</td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-Id="@course.Id" class="button reservation">
+                                        <i class="fa fa-edit"></i> Edit
+                                    </a>
+                                    <a asp-action="Delete" asp-route-Id="@course.Id" class="button reservation">
+                                        <i class="fa fa-trash"></i> Delete
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <a asp-action="Create" class="button reservation">
+            <i class="fas fa-plus"></i> Create New Course
+        </a>
+    </div>
+</body>
